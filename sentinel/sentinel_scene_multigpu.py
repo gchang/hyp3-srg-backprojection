@@ -37,6 +37,8 @@ basename=str(datfile[0:len(datfile)-5],'UTF-8')
 command = '$PROC_HOME/sentinel/orbitstatevectors.py '+orbitfile+' '+SAFEname
 print (command)
 ret=os.system(command)
+if ret != 0:
+    sys.exit('failed: '+command)
 
 # initialize the slc file
 fe=open('elevation.dem.rsc','r')
@@ -49,11 +51,15 @@ fe.close()
 command = '$PROC_HOME/sentinel/createslc '+demwidth+' '+demlength+' '+SAFEname+'.geo'
 print (command)
 ret=os.system(command)
+if ret != 0:
+    sys.exit('failed: '+command)
 
 #  process the scene, three swaths
 command = '$PROC_HOME/sentinel/sentinel_raw_process '+basename
 print (command)
 ret=os.system(command)
+if ret != 0:
+    sys.exit('failed: '+command)
 
 sys.exit(0)
 
