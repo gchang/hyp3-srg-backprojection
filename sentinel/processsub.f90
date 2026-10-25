@@ -10,7 +10,7 @@
   integer*1 bin(30000*8),bytedata(32768*8)
   complex*8 cb(10), in(30000), cbytedata(32768)
   complex (kind=4), allocatable :: data(:),dataspec(:),ref(:),reftime(:)
-  character*200 rawfile, SAFEname
+  character*1024 rawfile, SAFEname
   integer*8 iplanf,iplani,nbytes,inlines,rawoffset
   integer*4 i,j,ipolarity,nlines,npts,nsamps,nvalid,k,kk,kkk,ipri,swath,isafe
   integer*4 ranfft, rangedecimation, pricount, burst, line, linesmax
@@ -18,9 +18,9 @@
   integer in2, in3, in4
   real*4 pulselength,ramprate,samplefreq,startfreq
   real*8 fref, samplefrequency, t, phase, pi
-  character*300 slcoutfile, orbitfile
+  character*1024 slcoutfile, orbitfile
   integer burstlines(100)
-  character*200 burstfile(100)
+  character*1024 burstfile(100)
   integer*8 filelen, ioffset
 !  complex, allocatable :: rangeprocdata(:,:)
   integer*1, allocatable :: rangeprocdata(:,:)

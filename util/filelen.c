@@ -7,12 +7,13 @@ long long filelen_(char *filename){
   long long buf[20];
   struct stat sb;
   int ierr,i;
-  char fname[200];
+  char fname[1024];
 
-  memcpy(fname,filename,200); /* file name into array */
+  for(i=0;i<1023 && filename[i]!=0 && filename[i]!=32;i++)fname[i]=filename[i]; /* file name into array */
+  fname[i]=0;
 
   /*  null terminate file name */
-  for(i=0;i<200;i++){
+  for(i=0;i<1024;i++){
     if(fname[i]==32)fname[i]=0; 
     if(fname[i]==0)break;
   }

@@ -2,7 +2,7 @@ subroutine getburststatevectors(startime,SAFEname)
 
   implicit none
   integer i, j, itemp, nvect, ifirst, isafe
-  character*200 SAFEname
+  character*1024 SAFEname
   real*8 startime
   real*8 time(10000),xx(3,10000),vv(3,10000),aa(3,10000)
 

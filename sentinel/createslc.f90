@@ -2,7 +2,7 @@
 
   complex, allocatable :: a(:,:)
   character*20 str
-  character*300 outfile
+  character*1024 outfile
 
   if(iargc().le.1)then
      print *,'usage: createslc pixacross linesdown <outfile=slc>'

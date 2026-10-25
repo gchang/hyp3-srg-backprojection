@@ -9,10 +9,10 @@ int initdk_(lun, file)
 int *lun; char *file;
 {  int i;
    int fd;
-   char filename[100];
+   char filename[1024];
 
    i=0;
-   while(file[i]!=' ' && i<strlen(file) && i<99){
+   while(file[i]!=' ' && i<strlen(file) && i<1023){
      filename[i]=file[i];
      i++;
      filename[i]='\0';

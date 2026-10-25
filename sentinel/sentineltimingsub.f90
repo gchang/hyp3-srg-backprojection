@@ -2,8 +2,8 @@
 
   subroutine sentineltimingsub(rangeprocdata,rangesamples,linesmax,lines,nbursts,orbitfile,SAFEname,swath)
 
-    character*300 orbitfile, burstfile, str
-    character*200 SAFEname
+    character*1024 orbitfile, burstfile, str
+    character*1024 SAFEname
       double precision x(3),v(3),xold(3),vest(3)
       double precision xx(3,28),vv(3,28),t(28),time
       double precision timefirst,timedelta,timeorbit(28),timeline(100000)

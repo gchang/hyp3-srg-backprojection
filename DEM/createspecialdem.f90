@@ -2,7 +2,7 @@
 !c   create a dem with specific limits and upsample amoint
 !c   derived from upsampledem - upsample a dem (i*2) file linearly
 
-      character*360 infile, outfile, inrscfile, outrscfile
+      character*1024 infile, outfile, inrscfile, outrscfile
       character*60 string
       character*14 str, str2
       character*14 strwidth,strlength,strxfirst,stryfirst,strxstep,strystep

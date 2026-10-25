@@ -20,14 +20,14 @@ subroutine backprojectcpusub(rangeprocdata, rangesamples, linestotal, nbursts, l
   !  arguments
   complex rangeprocdata(rangesamples,linestotal)
   integer rangesamples, nbursts, linestotal, lines(nbursts), swath
-  character*300 slcoutfile
-  character*200 SAFEname
+  character*1024 slcoutfile
+  character*1024 SAFEname
   
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   !! DECLARE LOCAL VARIABLES
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  character*300 str,rawinfile,dbfile,demfile,demrscfile,burstfile
-  character*300 orbtimingfile,units,type,table,posfile
+  character*1024 str,rawinfile,dbfile,demfile,demrscfile,burstfile
+  character*1024 orbtimingfile,units,type,table,posfile
 
   integer*1 header(80)
   integer stat,intp_orbit,isafe

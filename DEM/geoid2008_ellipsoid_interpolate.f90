@@ -3,7 +3,7 @@
   !c  Prime application: convert Copernicus DEM to an ellipsoid-based DEM
 
       implicit none
-      character*300 demfile,rscfile,indemfile,inrscfile,str,gridfile
+      character*1024 demfile,rscfile,indemfile,inrscfile,str,gridfile
       integer*2, allocatable :: indem(:,:),dem(:,:)
       integer iwidth, ilength, i, j
       real*8 x0,y0,dx,dy,x,y !,f,rj2,rj4,rj6

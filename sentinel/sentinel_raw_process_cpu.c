@@ -127,14 +127,19 @@ int main (int argc, char *argv[]) {
   long *line10, *line11, *line12, nswath[3];
 
   struct stat sb;
-  char fname[200];
-  char basename[200];
-  char SAFEname[200];
+  // file names hold the full path of the input; SAFEname must have the same length as in processsub*.f90
+  char fname[1024];
+  char basename[1024];
+  char SAFEname[1024];
   char *charerr, *p;
 
   if(argc<2){
     fprintf(stderr,"usage: %s base_filename (without .dat)\n",
             argv[0]);
+    exit(1);
+  }
+  if(strlen(argv[1])+12>sizeof(basename)){
+    fprintf(stderr,"%s: input path longer than %d characters\n",argv[0],(int)sizeof(basename)-12);
     exit(1);
   }
 
@@ -147,6 +152,7 @@ int main (int argc, char *argv[]) {
 
   // extract SAFEname
   p = strstr(basename,"SAFE");
+  memset(SAFEname,0,sizeof(SAFEname));
   charerr = strncpy(SAFEname,basename,p-basename-1);
   printf("SAFEname is %s\n",SAFEname);
   
