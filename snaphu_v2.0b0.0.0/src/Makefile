@@ -17,6 +17,10 @@ CC		=	cc
 OPTIMFLAGS	=	-O3
 DEBUGFLAGS	=	-ggdb
 CFLAGS		=	$(OPTIMFLAGS) -Wall # -Wuninitialized -m64 -D NO_CS2
+# snaphu is written to C17 and earlier. GCC 15 and later default to C23, where an empty
+# parameter list means (void), and snaphu_tile.c stops compiling. Keep the older standard
+# even when CFLAGS is given on the command line (make CFLAGS=-O3).
+override CFLAGS	+=	-std=gnu17
 LIBS		=	-lm 
 BINDIR		=	../bin
 INSTALLDIR	=	/usr/local/bin
